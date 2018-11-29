@@ -12,6 +12,3 @@ class Video(object):
         self.title = self.title.split('(')[0].strip(' ')
         self.title = self.title.split('[')[0].strip(' ')
         self.title = self.title.split('ft.')[0].strip(' ')
-
-    def apple(self):
-        print("I AM CLASSY APPLES!")

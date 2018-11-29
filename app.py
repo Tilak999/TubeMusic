@@ -25,12 +25,9 @@ def getMusic():
 	try:
 		#get url parameter + parse url to readable form
 		url = urllib.parse.unquote(request.args.get('url'))
-
 		v = Video(url)
 		meta = SpotifyMeta(v.title,v.artist)
-
 		return render_template('getMusic.html', meta=meta, url=url)
-	
 	except:
 		print('error');
 		return redirect('/')
