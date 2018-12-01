@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import redirect
 from flask import request
+from flask import send_from_directory
 from flask import render_template
+
 from mp3Tags import mp3Tags
 from itunesMeta import itunesMeta
 
@@ -41,8 +43,9 @@ def saveToDisk():
 		youtube.download(url,filepath)
 		
 		mp3Tags(meta.getBestMatch(),filepath + ".mp3")
-
-		return redirect(filepath + ".mp3")
+		return send_from_directory(directory=download_dir, 
+													filename=name+".mp3",
+													as_attachment=True)
 
 if __name__ == '__main__':
     app.run()
