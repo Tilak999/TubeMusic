@@ -1,14 +1,10 @@
 <!doctype html>
-<title>{{meta.title}} - {{meta.album}}</title>
+<title>{{meta.track_name}} - {{meta.album}}</title>
 	<center>
-	<h1>{{meta.title}}</h1>
+	<h1>{{meta.track_name}}</h1>
 	<h2>{{meta.album}}</h2>
 	<h3>{{meta.artists}}</h3>
-	{% if meta.isEmpty=="true" %}
-      <h3>No meta-data</h3>
-	{% else %}
 	  <img src="{{meta.album_art}}" width="300">
-	{% endif %}
 	<br>
 	<a href="/saveToDisk?url={{url}}">download</a>
 	
